@@ -1,9 +1,10 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Grid, GridItem } from '@chakra-ui/react'
 import axios, { AxiosResponse } from 'axios'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import LocationCard from '../components/location-card'
 
 interface LocationResp {
   locations: any[];
@@ -12,9 +13,9 @@ interface LocationResp {
 
 const Home: NextPage = () => {
   const [locations, setLocations] = useState([])
+  const [payload, setPayload] = useState({ start:0, limit:3 })
 
   useEffect(() => {
-    const payload = {start:0, limit:10 };
     axios.post('api/locations', payload)
       .then((response: AxiosResponse<any, LocationResp>) => {
         setLocations(response.data.locations)
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
       });
 
 
-  }, [])
+  }, [payload])
 
   console.log('d', locations);
   
@@ -37,7 +38,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box height="100%" width="100%">
-        <p>{JSON.stringify(locations)}</p>
+      <Grid templateColumns='repeat(3, 1fr)' gap={6} padding={6}>
+      {locations.map((l, i) => (
+        <GridItem w='100%' key={i}>
+          <LocationCard location={l} />
+        </GridItem>
+        ))}
+      </Grid>
       </Box>
     </>
   )
