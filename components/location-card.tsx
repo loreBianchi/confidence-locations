@@ -1,3 +1,4 @@
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import { Badge, Box, Divider, Flex, Heading, Spacer } from "@chakra-ui/react"
 import { FC } from "react"
 import { Location } from "../common-interfaces";
@@ -19,7 +20,7 @@ const LocationCard: FC<LocationCardProps> = ({ location }) => {
       borderRadius={10} 
       padding={6}
       backgroundColor="gray.100"
-      boxShadow='base'
+      boxShadow='md'
     >
       <Flex justifyContent='space-between' direction='column' height='100%'>
         <Box height='300px'>
@@ -28,11 +29,32 @@ const LocationCard: FC<LocationCardProps> = ({ location }) => {
             <Spacer />
             <LocationType type={location.locationType} />
           </Flex>
-          <Divider orientation='horizontal' marginTop={2} marginBottom={2} />
+          <Divider orientation='horizontal' marginTop={3} marginBottom={3} />
           <Box>
-            <p><b>Address: </b>: {`${addressLine1}${addressLine2 ? (', ' + addressLine2) : ''}, ${city} - ${state} - ${zip}`}</p>
-            {location.description && <p><b>Description</b>: {location.description}</p>}
-            <p><b>Number of devices</b>: {location.numberofDevices}</p>
+            <table className="w-100">
+              <tbody>
+                <tr>
+                  <td className="no-wrap"><b>Address: </b></td>
+                  <td className="text-right">{`${addressLine1}${addressLine2 ? (', ' + addressLine2) : ''}, ${city} - ${state} - ${zip}`}</td>
+                </tr>
+                <tr>
+                  <td className="no-wrap"><b>Description</b></td>
+                  <td className="text-right">{location.description || '-'}</td>
+                </tr>
+                <tr>
+                  <td className="no-wrap"><b>Location user role</b></td>
+                  <td className="text-right">{location.locationUserRole}</td>
+                </tr>
+                <tr>
+                  <td className="no-wrap"><b>Number of devices</b></td>
+                  <td className="text-right">{location.numberofDevices}</td>
+                </tr>
+                <tr>
+                  <td className="no-wrap"><b>New Location</b></td>
+                  <td className="text-right">{location.newLocation ? <CheckIcon color='green.500' /> : <CloseIcon color='red.500' />}</td>
+                </tr>
+              </tbody>
+            </table>
           </Box>
         </Box>
         <Box border='1px solid grey' overflow="hidden" height='40vh' background='blue.100'> 

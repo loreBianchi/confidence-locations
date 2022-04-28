@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.w-100 {
+  width: 100%;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.text-right {
+  text-align: right;
+}
