@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         <Box height="100%" width="100%" id="list">
           <Grid templateColumns="repeat(3, 1fr)" gap={6} padding={6}>
             {locations.map((l: Location, i) => (
-              <GridItem w="100%" key={i}>
+              <GridItem key={i}>
                 <LocationCard location={l} />
               </GridItem>
             ))}

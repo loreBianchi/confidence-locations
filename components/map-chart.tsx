@@ -15,7 +15,6 @@ const MapChart: FC<MarkerProps> = ({ name, coordinates }) => {
   if (!coordinates?.[0] || !coordinates?.[1]) {
     return <Flex justifyContent='center' alignItems='center' height='100%' backgroundColor='orange.100'>NO COORDINATES</Flex>
   }
-  console.log('xxx', coordinates);
   
   return (
     <ComposableMap

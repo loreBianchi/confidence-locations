@@ -1,6 +1,7 @@
 import { Badge, Box, Divider, Flex, Heading, Spacer } from "@chakra-ui/react"
 import { FC } from "react"
 import { Location } from "../common-interfaces";
+import LocationType from "./location-type";
 import MapChart from "./map-chart";
 
 interface LocationCardProps {
@@ -25,7 +26,7 @@ const LocationCard: FC<LocationCardProps> = ({ location }) => {
           <Flex>
             <Heading as='h4' size='md'>{location.locationName}</Heading>
             <Spacer />
-            <Badge height="18px" colorScheme={location.locationType === 'Personal' ? 'green' : 'teal'}>{location.locationType}</Badge>
+            <LocationType type={location.locationType} />
           </Flex>
           <Divider orientation='horizontal' marginTop={2} marginBottom={2} />
           <Box>
