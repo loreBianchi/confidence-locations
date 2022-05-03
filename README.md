@@ -29,4 +29,11 @@ npm run test
 yarn test
 ```
 
+## Screenshots/Video
+
+https://user-images.githubusercontent.com/56672209/166493601-a8f93647-590a-4830-bc29-952a737c0803.mov
+
+![Schermata 2022-05-03 alle 17 35 13](https://user-images.githubusercontent.com/56672209/166493670-aaa247cb-2653-47e1-afd4-8d28fd0503a1.png)
+
+![Schermata 2022-05-03 alle 17 44 29](https://user-images.githubusercontent.com/56672209/166493727-4861ecb0-5c4b-42b6-b0d8-8f9cf56d62cc.png)
 
