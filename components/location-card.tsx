@@ -1,5 +1,5 @@
 import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
-import { Badge, Box, Divider, Flex, Heading, Spacer } from "@chakra-ui/react"
+import { Box, Divider, Flex, Heading, Spacer } from "@chakra-ui/react"
 import { FC } from "react"
 import { Location } from "../common-interfaces";
 import LocationType from "./location-type";
@@ -52,6 +52,10 @@ const LocationCard: FC<LocationCardProps> = ({ location }) => {
                 <tr>
                   <td className="no-wrap"><b>New Location</b></td>
                   <td className="text-right">{location.newLocation ? <CheckIcon color='green.500' /> : <CloseIcon color='red.500' />}</td>
+                </tr>
+                <tr>
+                  <td className="no-wrap"><b>Active Location</b></td>
+                  <td className="text-right">{location.active ? <CheckIcon color='green.500' /> : <CloseIcon color='red.500' />}</td>
                 </tr>
               </tbody>
             </table>

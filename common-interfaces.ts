@@ -20,4 +20,5 @@ export interface Location {
   numberofDevices: number;
   subscriptionActive: boolean;
   description?: string;
+  locationDetails?: string;
 }

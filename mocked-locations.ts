@@ -1,0 +1,65 @@
+export const fakeLocations = [
+  {
+    id: 100,
+    newLocation: false,
+    active: true,
+    locationName: 'test location 1',
+    locationDetails: "test desc",
+    address: {
+      addressLine1: '175 Cuesta Drive',
+      addressLine2: '',
+      state: 'CA',
+      city: 'Mountain View',
+      zip: '94040'
+    }, 
+    latitude: 0,
+    longitude: 0,
+    locationType: 'Personal',
+    numberofDevices: 0,
+    locationId: 'TEST01',
+    locationUserRole: 'TestRole',
+    subscriptionActive: true,
+  },
+  {
+    id: 101,
+    newLocation: false,
+    active: true,
+    locationName: 'test location 2',
+    locationDetails: "test desc",
+    address: {
+      addressLine1: '175 Cuesta Drive',
+      addressLine2: '',
+      state: 'CA',
+      city: 'Mountain View',
+      zip: '94040'
+    }, 
+    latitude: 0,
+    longitude: 0,
+    locationType: 'Personal',
+    numberofDevices: 0,
+    locationId: 'TEST02',
+    locationUserRole: 'TestRole',
+    subscriptionActive: true,
+  },
+  {
+    id: 102,
+    newLocation: false,
+    active: true,
+    locationName: 'test location 3',
+    locationDetails: "test desc",
+    address: {
+      addressLine1: '175 Cuesta Drive',
+      addressLine2: '',
+      state: 'CA',
+      city: 'Mountain View',
+      zip: '94040'
+    }, 
+    latitude: 0,
+    longitude: 0,
+    locationType: 'Personal',
+    numberofDevices: 0,
+    locationId: 'TEST03',
+    locationUserRole: 'TestRole',
+    subscriptionActive: true,
+  }
+]
